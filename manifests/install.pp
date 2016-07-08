@@ -48,7 +48,7 @@ class twemproxy::install (
   exec { "autoconf-${resource}":
     command   => 'autoreconf -fvi',
     provider  => shell,
-    logoutput => false,
+    logoutput => true,
     cwd       => "${prefix}/src/${resource}",
     creates   => "${prefix}/src/${resource}/configure",
     require   => [ Anchor['twemproxy::autoconf::end'], Class['twemproxy::package'] ]
@@ -56,7 +56,7 @@ class twemproxy::install (
   exec { "configure-${resource}":
     command   => $cfgcmd,
     provider  => shell,
-    logoutput => false,
+    logoutput => true,
     cwd       => "${prefix}/src/${resource}",
     creates   => "${prefix}/src/${resource}/config.status",
     require   => [ Anchor['twemproxy::autoconf::end'], Class['twemproxy::package'] ]
@@ -64,7 +64,7 @@ class twemproxy::install (
   exec { "make-${resource}":
     command   => 'make && make install',
     provider  => shell,
-    logoutput => false,
+    logoutput => true,
     cwd       => "${prefix}/src/${resource}",
     creates   => "${prefix}/src/${resource}/src/nutcracker",
     require   => [ Anchor['twemproxy::autoconf::end'], Class['twemproxy::package'] ]
