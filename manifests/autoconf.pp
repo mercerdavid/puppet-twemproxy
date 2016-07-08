@@ -33,7 +33,7 @@ class twemproxy::autoconf {
   exec { "make-${resource}":
     command   => 'make && make install',
     provider  => shell,
-    logoutput => true,
+    logoutput => false,
     cwd       => "${prefix}/src/${resource}",
     creates   => "${prefix}/src/${resource}/bin/autoconf",
     require   => Class['twemproxy::package']
