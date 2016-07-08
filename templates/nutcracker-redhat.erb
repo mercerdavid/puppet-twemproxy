@@ -38,7 +38,7 @@ start() {
         [ -f $LOGFILE ] || touch $LOGFILE
 
         echo -n $"Starting $NAME: "
-        $DAEMON $DAEMON_ARGS  >> $LOGFILE
+        $DAEMON $DAEMON_ARGS  >> $LOGFILE &
         RETVAL=$?
         echo
         [ $RETVAL -eq 0 ]
