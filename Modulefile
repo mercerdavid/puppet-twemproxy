@@ -1,5 +1,5 @@
 name    'puppet-twemproxy'
-version '1.1.7'
+version '1.1.8'
 source  'git@github.com:MSMFG/puppet-twemproxy.git'
 author  'Paul Gilligan <Paul.Gilligan@moneysupermarket.com>'
 license 'Apache-2.0'
