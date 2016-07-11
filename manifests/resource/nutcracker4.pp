@@ -18,7 +18,7 @@ define twemproxy::resource::nutcracker4 (
   $statsaddress         = '127.0.0.1',
   $statsport            = 22222,
   $statsinterval        = 30000,  # msec
-  $mbuf                 = 512, # bytes default is 16384 bytes
+  $mbuf                 = 16384, # bytes default is 16384 bytes recommend 512 bytes
 
   $members              = undef,
 
