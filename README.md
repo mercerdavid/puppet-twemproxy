@@ -28,6 +28,7 @@ The support version of twemproxy is 0.4.0 to take advantage of various improveme
           statsaddress         => '127.0.0.1',
           statsport            => 22222,
           statsinterval        => 10000,
+          mbuf                 => 16384,
 
           members              =>  [
            { 
