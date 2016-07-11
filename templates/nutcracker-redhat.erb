@@ -20,7 +20,7 @@ CONFFILE=/etc/nutcracker/<%= @name %>.yml
 LOGFILE=/var/log/nutcracker/<%= @name %>.log
 DAEMON=/usr/sbin/nutcracker
 PIDFILE=/var/run/nutcracker/$NAME.pid
-DAEMON_ARGS="-v <%= @verbosity %> -c $CONFFILE -m 512 -o $LOGFILE -p $PIDFILE -a <%= @statsaddress %> -s <%= @statsport %> -i <%= @statsinterval %> -d"
+DAEMON_ARGS="-v <%= @verbosity %> -c $CONFFILE -m <%= @mbuf %> -o $LOGFILE -p $PIDFILE -a <%= @statsaddress %> -s <%= @statsport %> -i <%= @statsinterval %> -d"
 SCRIPTNAME=/etc/init.d/$NAME
 
 # Source function library.
